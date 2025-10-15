@@ -1,0 +1,13 @@
+{
+  "name": "sitostaticoolimpiadiasyncawait",
+  "version": "1.0.0",
+  "description": "Sito Web statico con server Node.JS riguardante le Olimpiadi, usando Async/await",
+  "license": "ISC",
+  "author": "Nicola Schianchi",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  }
+}
