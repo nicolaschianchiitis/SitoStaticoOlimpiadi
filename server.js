@@ -48,6 +48,22 @@ function requestHandler(req, res) {
             res.end()
         }
     }) */
+    console.log(`>>> Richiesta in entrata: ${req.url}`)
+    let reqPath = filePaths[req.url]
+    let extension = path.extname((reqPath == undefined ? '' : reqPath))
+    let encoding = (extension == '.jpeg' || extension == '.png') ? '' : 'utf-8'
+
+    fs.readFile((reqPath == undefined ? '' : reqPath), {'encoding': encoding}, function (err, data) {
+        if (err) {
+            res.writeHead(404, { 'Content-Type': mimeTypes['.html'] })
+            res.write(`<center><h1 style="border: 4px solid red;">Errore 404: risorsa non trovata.</h1></center>`)
+            res.end()
+        } else {
+            res.writeHead(200, {'Content-Type': mimeTypes[extension]})
+            res.write(data)
+            res.end()
+        }
+    })
 }
 
 const server = http.createServer(requestHandler)
