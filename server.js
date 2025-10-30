@@ -23,7 +23,9 @@ const mimeTypes = {
 const filePaths = {
     '/': './public/html/index.html',
     '/css': './public/css/style.css',
-    '/logo_olimpiadi': './public/img/logo_olimpiadi.png'
+    '/logo_olimpiadi': './public/img/logo_olimpiadi.png',
+    '/discipline': './public/html/discipline.html',
+    '/edizioni': './public/html/edizioni.html'
 }
 
 async function requestHandler(req, res) {
